@@ -10,7 +10,7 @@
 왼쪽 - 기존의 웹사이트 \
 오른쪽 - React를 이용한 **SPA(Single Page Application)** \
 하나의 페이지만 존재하는 웹사이트, 하나의 페이지만으로 복잡한 웹페이지를 모두 표현 가능
-<br><br>
+<br><br><br><br>
 
 
 ## 변수선언 방식
@@ -45,8 +45,8 @@ console.log(title);//music
 ```
 var와 달리 중복선언 시, \
 해당 변수는 이미 선언되었다는 에러 메시지를 뱉는다. \
-즉, 중복선언이 불가하다. \
-하지만 변수에 값을 재할당하는 것은 가능하다.
+즉, **중복선언이 불가능**하다. \
+하지만 **변수에 값을 재할당하는 것은 가능**하다.
 
 **3. const - 중복선언 불가, 재할당 불가**
 ```javascript
@@ -63,3 +63,33 @@ console.log(title);
 ```
 let와 const의 차이는 **immutable(재할당)가능여부**이다. \
 재할당은 가능한 let과 달리 const는 재할당 또한 불가하다.
+<br><br><br><br>
+
+
+## 동등연산자와 일치연산자
+```javascript
+let a = 1;
+let b = '1';
+
+// 동등연산자, 값만 비교
+console.log(a == b); // 출력결과: true
+console.log(a != b); // 출력결과: false
+
+// 일치연산자, 값과 자료형까지 비교
+console.log(a === b); // 출력결과: false
+console.log(a !== b); // 출력결과: true
+```
+<br><br>
+
+
+## 삼항연산자
+**조건식 ? true일경우 : false일경우**
+```javascript
+let a = true;
+let b = false;
+
+console.log(a ? 1 : 2); // 출력결과: 1
+
+console.log(b ? 1 : 2); // 출력결과: 2
+```
+
