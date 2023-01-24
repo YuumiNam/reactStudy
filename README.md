@@ -79,7 +79,7 @@ console.log(a != b); // 출력결과: false
 console.log(a === b); // 출력결과: false
 console.log(a !== b); // 출력결과: true
 ```
-<br><br>
+<br>
 
 
 ## 삼항연산자
