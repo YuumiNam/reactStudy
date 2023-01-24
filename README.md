@@ -3,8 +3,62 @@
 참고2 : [유튜브 - 코딩앙마 React.js강좌](https://www.youtube.com/playlist?list=PLZKTXPmaJk8J_fHAzPLH8CJ_HO_M33e7-)
 <br><br><br><br>
 
+
+## React가 대세인 이유
 ![화면 캡처 2023-01-24 170328](https://user-images.githubusercontent.com/114986610/214280038-084dfa7f-93ec-44a1-9667-a809427b5dca.png)
 
 왼쪽 - 기존의 웹사이트 \
 오른쪽 - React를 이용한 **SPA(Single Page Application)** \
 하나의 페이지만 존재하는 웹사이트, 하나의 페이지만으로 복잡한 웹페이지를 모두 표현 가능
+<br><br>
+
+
+## 변수선언 방식
+**1. var - 중복 선언 가능, 재할당 가능**
+```javascript
+let title = 'book';
+console.log(title); // book
+
+let title = 'movie';
+console.log(title); 
+//Uncaught SyntaxError: Identifier 'title' has already been declared
+
+title = 'music';
+console.log(title);//music
+```
+- var 는 원조 변수선언방식으로, 위 코드와 같이 선언한 변수가 동일한 이름으로 중복 선언이 가능하다. **즉, 마지막에 할당된 값이 최종 변수에 저장된다.**
+- 변수를 유연하게 사용할 수 있지만, 기존에 선언해둔 변수의 존재를 잊고 재선언 하는 경우 문제가 발생할 수 있다.
+- 이를 보완하기 위해 ES6 부터 추가된 변수선언 방식이 **let** 과 **const** 이다.
+
+**2. let - 중복선언 불가, 재할당 가능**
+```javascript
+let title = 'book';
+console.log(title); // book
+
+let title = 'movie';
+console.log(title); 
+//Uncaught SyntaxError: Identifier 'title' has already been declared
+
+title = 'music';
+console.log(title);//music
+```
+var와 달리 중복선언 시, \
+해당 변수는 이미 선언되었다는 에러 메시지를 뱉는다. \
+즉, 중복선언이 불가하다. \
+하지만 변수에 값을 재할당하는 것은 가능하다.
+
+**3. const - 중복선언 불가, 재할당 불가**
+```javascript
+const title = 'book';
+console.log(title); // book
+
+const title = 'movie';
+console.log(title); 
+//Uncaught SyntaxError: Identifier 'title' has already been declared
+
+title = 'music';
+console.log(title);
+//Uncaught TypeError: Assignment to constant variable
+```
+let와 const의 차이는 **immutable(재할당)가능여부**이다. \
+재할당은 가능한 let과 달리 const는 재할당 또한 불가하다.
