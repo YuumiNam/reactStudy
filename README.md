@@ -1,10 +1,10 @@
-## React 입문했습니다!!
-참고1 : [인프런 - 소플의 처음만난 React](https://www.inflearn.com/course/%EC%B2%98%EC%9D%8C-%EB%A7%8C%EB%82%9C-%EB%A6%AC%EC%95%A1%ED%8A%B8) \
-참고2 : [유튜브 - 코딩앙마 React.js강좌](https://www.youtube.com/playlist?list=PLZKTXPmaJk8J_fHAzPLH8CJ_HO_M33e7-)
+# React 입문했습니다!!
+참고1 : [인프런 - 소플의 처음만난 React 바로가기](https://www.inflearn.com/course/%EC%B2%98%EC%9D%8C-%EB%A7%8C%EB%82%9C-%EB%A6%AC%EC%95%A1%ED%8A%B8) \
+참고2 : [유튜브 - 코딩앙마 React.js강좌 바로가기](https://www.youtube.com/playlist?list=PLZKTXPmaJk8J_fHAzPLH8CJ_HO_M33e7-)
 <br><br><br><br>
 
 
-## React가 대세인 이유
+# React가 대세인 이유
 ![화면 캡처 2023-01-24 170328](https://user-images.githubusercontent.com/114986610/214280038-084dfa7f-93ec-44a1-9667-a809427b5dca.png)
 
 왼쪽 - 기존의 웹사이트 \
@@ -13,6 +13,16 @@
 <br><br><br><br>
 
 
+# 개발환경 설정하기
+[Node.js 설치 바로가기](https://nodejs.org/ko/download/) (JavaScript runtime) \
+자바스크립트로 **네트워크 어플리케이션을 개발할 수 있도록 도와주는 환경**
+
+[VS Code 설치 바로가기](https://code.visualstudio.com/) (Integrated Development Environment) \
+마이크로소프트에서 제공하는 통합 개발환경 툴
+<br><br><br>
+
+
+# 기본적인 JavaScript 문법!!
 ## 변수선언 방식
 **1. var - 중복 선언 가능, 재할당 가능**
 ```javascript
@@ -92,4 +102,21 @@ console.log(a ? 1 : 2); // 출력결과: 1
 
 console.log(b ? 1 : 2); // 출력결과: 2
 ```
+<br>
 
+
+## JavaScript의 함수
+```javascript
+// function statement를 사용
+function sum(a, b) {
+  return a + b;
+}
+console.log(sum(10, 20)); // 출력결과: 30
+
+
+// arrow function expresstion을 사용
+const multiply = (a, b) => {
+  return a * b;
+}
+console.log(multiply(10. 20)); // 출력결과: 200
+```
