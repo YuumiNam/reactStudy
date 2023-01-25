@@ -1,15 +1,26 @@
 # React 입문했습니다!!
 참고1 : [인프런 - 소플의 처음만난 React 바로가기](https://www.inflearn.com/course/%EC%B2%98%EC%9D%8C-%EB%A7%8C%EB%82%9C-%EB%A6%AC%EC%95%A1%ED%8A%B8) \
 참고2 : [유튜브 - 코딩앙마 React.js강좌 바로가기](https://www.youtube.com/playlist?list=PLZKTXPmaJk8J_fHAzPLH8CJ_HO_M33e7-)
-<br><br><br><br>
+<br><br>
 
+**리액트(React)란??** \
+**사용자 인터페이스를 만들기위한 자바스크립트 라이브러리** (A Javascript library for building user interfaces) \
+라이브러리 - 자주 사용하는 기능들을 모아서 정리해놓은것 \
+사용자 인터페이스(UI) - 사용자와 컴퓨터 간의 상호작용을 위해 입력과 출력을 제어해주는 것, 예를들어 화면에 나와있는 버튼
+
+**프레임워크 vs 라이브러리** \
+가장 큰 차이점은 **프로그램의 흐름에 대한 제어권한** \
+프레임워크 - 제어권한을 개발자가 아닌 프레임워크가 갖고있음 \
+라이브러리 - 개발자가 필요한 부분만 골라쓰는 느낌일뿐 라이브러리가 제어권한을 갖지는 않음
+<br><br>
 
 # React가 대세인 이유
 ![화면 캡처 2023-01-24 170328](https://user-images.githubusercontent.com/114986610/214280038-084dfa7f-93ec-44a1-9667-a809427b5dca.png)
 
 왼쪽 - 기존의 웹사이트 \
 오른쪽 - React를 이용한 **SPA(Single Page Application)** \
-하나의 페이지만 존재하는 웹사이트, 하나의 페이지만으로 복잡한 웹페이지를 모두 표현 가능
+하나의 페이지만 존재하는 웹사이트, 하나의 페이지만으로 복잡한 웹페이지를 모두 표현 가능 \
+이러한 SPA 구현을 도와주는 것이 React!!
 <br><br><br><br>
 
 
