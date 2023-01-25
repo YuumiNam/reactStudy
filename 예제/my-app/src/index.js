@@ -4,10 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// 최상위 Component인 Library.jsx를 import
+// <React.StrictMode> 사이에 넣어줌
+import Library from './ex03/Library';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Library />
   </React.StrictMode>
 );
 
