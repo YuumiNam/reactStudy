@@ -24,6 +24,22 @@
 <br><br><br><br>
 
 
+# 리액트의 장점
+## Virtual DOM
+![화면 캡처 2023-01-25 102900](https://user-images.githubusercontent.com/114986610/214459884-502d4a82-db14-4221-bb51-292a79efe2fa.png)
+DOM(Document Object Model)이란?? **웹페이지를 정의하는 하나의 객체**
+- 일반적인 웹페이지는 화면이 업데이트 될때마다 DOM을 직접 수정해야함 -> 수정할 부분을 직접 찾아야하기때문에 매우 부담됨 \
+- React는 DOM의 직접수정이 아닌, Virtual DOM을 통해서 수정해야 할 부분만을 빠르게 업데이트 해줌
+
+## 재사용성 (Component-Based)
+![화면 캡처 2023-01-25 111803](https://user-images.githubusercontent.com/114986610/214465834-40372fcc-723d-4b9b-84b9-35e4e52249e5.png)
+- React는 모든 요소가 Component라는 하나의 개념으로 구성되어 있음
+- 따라서, 의존성과 호환성 문제가 적으므로 Component단위로 재사용이 용이함
+
+## 모바일 앱 개발지식
+- Javascript로 한번 코딩을 해서 Android와 IOS 앱을 만들 수 있음
+<br><br><br>
+
 # 개발환경 설정하기
 [Node.js 설치 바로가기](https://nodejs.org/ko/download/) (JavaScript runtime) \
 자바스크립트로 **네트워크 어플리케이션을 개발할 수 있도록 도와주는 환경**
