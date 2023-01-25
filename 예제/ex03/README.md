@@ -55,7 +55,7 @@ ReactDOM.render(
 );
 ```
 - Hello Component 내부에서 JSX를 사용했던 부분이 React의 createElement함수로 대체되었음
-- JSX 문법을 사용하면 React에서는 내부적으로 createElement함수를 사용하도록 변환하게 되는것
+- **JSX 문법을 사용하면 React에서는 내부적으로 createElement함수를 사용하도록 변환하게 되는것**
 - 최종적으로는 createElement를 호출한 결과로 javascript 객체가 나오게 됨
 
 
