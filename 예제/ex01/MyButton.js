@@ -8,5 +8,6 @@ function MyButton(props) {
     )
 }
 
+// React Component를 DOM Container에 렌더링하는 코드
 const domContainer = document.querySelector('#root');
 ReactDOM.render(React.createElement(MyButton), domContainer);
