@@ -6,7 +6,7 @@
 
 
 4.**MyButton.js 컴포넌트 생성** \
-![화면 캡처 2023-01-25 144923](https://user-images.githubusercontent.com/114986610/214490037-9fc8211f-51b3-4693-8689-88bc511da637.png) \
+![화면 캡처 2023-01-25 160331](https://user-images.githubusercontent.com/114986610/214500753-d3d0c20a-79e9-4c3b-b477-e0c879d48530.png) \
 5.**ReactDOM.render**를 이용해서 컴포넌트를 DOM Container에 렌더링하는 코드 작성 
 ```javascript
 const domContainer = document.querySelector('#root');
