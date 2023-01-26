@@ -137,11 +137,11 @@ ReactDOM.render(
 function Comment(props) {
     return (
         <div className="comment">
-            <div className="user-info">
-                <img className="avatar"
-                    src={props.author.avatarUrl }
-                    alt={props.author.name }
-                />
+            <div className="user-info"> // << 추출할 대상
+                <img className="avatar" // << 추출할 대상
+                    src={props.author.avatarUrl } // <<
+                    alt={props.author.name } // <<
+                /> // <<
                 <div className="user-info-name">
                     {props.author.name }
                 </div>
