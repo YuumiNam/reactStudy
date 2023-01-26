@@ -9,3 +9,6 @@
 
 ## my-app/ex04
 ### [Rendering Elements](https://github.com/YuumiNam/reactStudy/tree/master/%EC%98%88%EC%A0%9C/my-app/src/ex04)
+
+## my-app/ex05
+### [Components and Props](https://github.com/YuumiNam/reactStudy/tree/master/%EC%98%88%EC%A0%9C/my-app/src/ex04)
