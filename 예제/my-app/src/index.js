@@ -27,7 +27,7 @@ setInterval(() => {
   root.render(
     <React.StrictMode>
       <Clock />
-    </React.StrictMode>,
+    </React.StrictMode>
   );
 }, 1000);
 
