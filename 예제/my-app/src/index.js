@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 // <React.StrictMode> 사이에 넣어줌
 import Library from './ex03/Library';
 import Clock from './ex04/Clock';
+import CommentList from './ex05/CommentList';
 
 /**
 * ReactDOM.render => Virtual DOM에서 실제 DOM으로 렌더링되는 과정
@@ -22,14 +23,22 @@ import Clock from './ex04/Clock';
 // );
 
 // ex04
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// setInterval(() => {
+//   root.render(
+//     <React.StrictMode>
+//       <Clock />
+//     </React.StrictMode>
+//   );
+// }, 1000);
+
+// ex05
 const root = ReactDOM.createRoot(document.getElementById('root'));
-setInterval(() => {
-  root.render(
-    <React.StrictMode>
-      <Clock />
-    </React.StrictMode>
-  );
-}, 1000);
+root.render(
+  <React.StrictMode>
+    <CommentList />
+  </React.StrictMode>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
