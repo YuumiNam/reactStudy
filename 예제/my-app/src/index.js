@@ -4,16 +4,32 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-// 최상위 Component인 Library.jsx를 import
+// 최상위 Component를 import
 // <React.StrictMode> 사이에 넣어줌
 import Library from './ex03/Library';
+import Clock from './ex04/Clock';
 
+/**
+* ReactDOM.render => Virtual DOM에서 실제 DOM으로 렌더링되는 과정
+*/
+
+// ex03
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <React.StrictMode>
+//     <Clock />
+//   </React.StrictMode>
+// );
+
+// ex04
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <Library />
-  </React.StrictMode>
-);
+setInterval(() => {
+  root.render(
+    <React.StrictMode>
+      <Clock />
+    </React.StrictMode>,
+  );
+}, 1000);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
