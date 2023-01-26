@@ -6,7 +6,7 @@ const styles = {
         padding: 8,
         display: "flex",
         flexDirection: "row",
-        border: "1px, solid grey",
+        border: "1px solid grey",
         borderRadius: 16,
     },
     messageText: {
@@ -19,13 +19,14 @@ class Notification extends React.Component {
     constructor(props) {
         super(props);
 
+        // 생성자에 state에 아무런 데이터도 가지고 있지 않음
         this.state = {};
     }
 
     render() {
         return (
             <div style={styles.wrapper }>
-                <span style={styles.messageText}>{this.props.message }</span>
+                <span style={styles.messageText }>{this.props.message }</span>
             </div>
         );
     }

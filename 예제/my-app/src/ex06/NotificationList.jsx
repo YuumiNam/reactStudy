@@ -19,17 +19,23 @@ class NotificationList extends React.Component {
     constructor(props) {
         super(props);
 
+        // 생성자에 Notifivation이라는 빈 배열을 state에 넣어줬음
         this.state = {
-          Notification: [],  
+          notifications: [],  
         };
     }
 
+    // componentDidMount = Component가 생성되는 시점
+    // setInterval() 함수를 사용하여 매 1초마다 정해진 작업을 수행함
     componentDidMount() {
         const {notifications} = this.state;
         timer = setInterval(() => {
             if (notifications.length < reservedNotifications.length) {
                 const index = notifications.length;
                 notifications.push(reservedNotifications[index]);
+                // state를 업데이트 하기 위하여
+                // setState()함수를 사용했음
+                // state는 직접변경은 절대 하면안되고 반드시 setState()를 통한 변경을 해줘야함
                 this.setState({
                     notifications: notifications,
                 });
@@ -50,4 +56,4 @@ class NotificationList extends React.Component {
     }
 }
 
-export default Notification;
+export default NotificationList;

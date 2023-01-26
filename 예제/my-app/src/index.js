@@ -9,6 +9,7 @@ import reportWebVitals from './reportWebVitals';
 import Library from './ex03/Library';
 import Clock from './ex04/Clock';
 import CommentList from './ex05/CommentList';
+import NotificationList from './ex06/NotificationList';
 
 /**
 * ReactDOM.render => Virtual DOM에서 실제 DOM으로 렌더링되는 과정
@@ -33,10 +34,17 @@ import CommentList from './ex05/CommentList';
 // }, 1000);
 
 // ex05
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <React.StrictMode>
+//     <CommentList />
+//   </React.StrictMode>
+// );
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CommentList />
+    <NotificationList />
   </React.StrictMode>
 );
 
