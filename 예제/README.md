@@ -6,3 +6,6 @@
 
 ## my-app/ex03
 ### [JSX의 정의와역할 및 장점](https://github.com/YuumiNam/reactStudy/tree/master/%EC%98%88%EC%A0%9C/my-app/src/ex03)
+
+## my-app/ex04
+### [Rendering Elements](https://github.com/YuumiNam/reactStudy/tree/master/%EC%98%88%EC%A0%9C/my-app/src/ex04)
