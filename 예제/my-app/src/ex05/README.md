@@ -39,10 +39,198 @@
 function App(props) {
     return (
         <Profile 
-            name="짱구" 
-            introduction="안녕하세요, 짱구입니다" 
+            name="유미" 
+            introduction="안녕하세요, 유미입니다" 
             viewCount={1500 } // 중괄호를 사용하면 무조건 자바스크립트 코드가 들어간다
         />
+    );
+}
+```
+<br><br>
+
+
+# Component만들기 및 렌더링
+- Component는 **Function Component**와 **Class Component**가 있음
+- 하지만, Class Component는 여러가지 쓰기 불편한 요소가 많음
+- 이 와중에 Function Component를 개선하는 과정에서 개발된 것이 이후에 배울 **Hook**이다
+- React 개발에서는 거의 Hook을 사용한다
+
+```javascript
+// Function Component
+function Welcome(props) {
+    return <h1>안녕, {props.name }</h1>;
+}
+
+
+// Class Component
+// React.Component를 상속받아야함
+class Welcome extends React.Component {
+    render() {
+        return <h1>안녕, {props.name }</h1>;
+    }
+}
+```
+<br><br>
+
+
+# Component 이름은 항상 대문자로 시작해야한다
+```javascript
+// HTML div태그로 인식
+const element = <div />;
+
+
+// Welcome이라는 리액트 Component로 인식
+// 만약 <welcome /> 이렇게 쓴다면 DOM tag로 인식해버리기때문에 안됨!!
+const element = <Welcome name="유미" />;
+```
+<br><br>
+
+
+# Component 렌더링
+- Component가 붕어빵 틀이라면 실제로 찍어낸 붕어빵은 Element
+- 즉, Element를 렌더링 해주는 작업이 필요
+```javascript
+function Welcome(props) {
+    return <h1>안녕, {props.name}</h1>;
+}
+
+const element = <Welcome name="유미" />;
+
+ReactDOM.render(
+    element,
+    document.getElmentById('root')
+);
+```
+<br><br>
+
+
+# Component 합성
+```javascript
+function Welcome(props) {
+    return <h1>안녕, {props.name}</h1>;
+}
+
+// App Component안에
+// 3개의 Welcome Component가 포함되어있음
+// 3개의 Welcome Component는 각각 다른 props를 갖고있음(name이 다름)
+function App(props) {
+    return(
+        <Welcome name="Mike" />
+        <Welcome name="Ami" />
+        <Welcome name="Jane" />
+    )
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElmentById('root')
+);
+```
+<br><br>
+
+
+# Component 추출
+```javascript
+// Comment Component안에 수많은 div가 있음
+// 이 중, avatar를 별도의 Component로 추출할것
+// 그 다음, 상위 div인 user-info를 별도의 Component로 
+function Comment(props) {
+    return (
+        <div className="comment">
+            <div className="user-info">
+                <img className="avatar"
+                    src={props.author.avatarUrl }
+                    alt={props.author.name }
+                />
+                <div className="user-info-name">
+                    {props.author.name }
+                </div>
+            </div>
+
+            <div className="comment-text">
+                {props.text }
+            </div>
+
+            <div className="comment-date">
+                {formatDate(props.date) }
+            </div>
+        </div>
+    );
+}
+
+
+// 위 Component의 props는 아래와 같은형태일것
+props = {
+    author: {
+        name: "유미",
+        avatarUrl: "https://....",
+    },
+    text: "댓글입니다",
+    date: Date.now(),
+}
+
+
+// avatar를 별도의 Component로 추출하기
+function Avatar(props) {
+    return(
+        <img className="avatar"
+            src={props.user.avatarUrl } 
+            alt={props.user.name }
+        />
+    )
+}
+
+
+// 추출한 avatar Component를 Comments Component에 반영
+function Comment(props) {
+    return (
+        <div className="comment">
+            <div className="user-info">
+                <Avatar user={props.author } /> // 여기를 바꿔줬음
+                <div className="user-info-name">
+                    {props.author.name }
+                </div>
+            </div>
+
+            <div className="comment-text">
+                {props.text }
+            </div>
+
+            <div className="comment-date">
+                {formatDate(props.date) }
+            </div>
+        </div>
+    );
+}
+
+
+// user-info를 별도의 Component로 추출하기
+function UserInfo(props) {
+    return(
+        <div className="user-info">
+            <Avatar user={props.user } />
+            <div className="user-info-name">
+                {props.user.name }
+            </div>
+        </div>
+    )
+}
+
+
+// 추출한 UserInfo Component를 Comments Component에 반영
+function Comment(props) {
+    return (
+        <div className="comment">
+            <UserInfo user={props.author } /> // 여기를 바꿔줬음
+
+            <div className="comment-text">
+                {props.text }
+            </div>
+
+            <div className="comment-date">
+                {formatDate(props.date) }
+            </div>
+        </div>
     );
 }
 ```
