@@ -1,3 +1,24 @@
+# Props vs State
+### 공통점
+React에서 구성 요소가 데이터를 받거나 처리하고 보내기 위해 사용됨
+
+### Props
+- 불변의 데이터
+- 부모로부터 전달되는
+- 변경 불가
+
+### State (상태)
+- 가변 데이터
+- 구성 요소에 의해 유지
+- 변경 가능
+ 
+### Props와 State 차이점
+- State는 내부 (컴포넌트)에서 생성하고 활동하고, 데이터를 변경할 수 있음
+- Props는 외부(부모 컴포넌트)에서 상속 받는 데이터이며, 데이터를 변경할 수 없음
+<br><br>
+
+
+
 # Hook의 개념
 - 앞서 봤듯이 Component에는 **Class Component**와 **Function Component**가 있음
 - Class Component에서는 생성자에서 state를 정의하고 setState()함수를 통해 업데이트하고 Lifecycle methods를 제공함
@@ -7,6 +28,7 @@
 
 ![화면 캡처 2023-01-27 104738](https://user-images.githubusercontent.com/114986610/214992451-38829387-9b99-45dc-89ce-9744be18c6ad.png)
 <br><br>
+
 
 
 # useState() Hook
@@ -59,6 +81,7 @@ function Counter(props) {
 }
 ```
 <br><br>
+
 
 
 # useEffect() Hook
@@ -115,7 +138,8 @@ function Counter(props) {
     );
 }
 ```
-<br>
+<br><br>
+
 
 
 # useEffect() Hook사용법 재정리
@@ -136,11 +160,13 @@ useEffect(() => {
 <br><br>
 
 
+
 # useMemo() Hook
 - Memoized value를 리턴하는 Hook
 - **연산량이 많은 함수의 호출결과를 저장해두었다가 같은 입력값으로 함수를 호출하면**
 - **새로 함수를 호출하지않고 이전에 저장해놨던 호출결과를 바로 반환시킴**
 <br><br>
+
 
 
 # useMemo() Hook 사용법
@@ -163,6 +189,7 @@ const memoizedValue = useMemo (
 <br><br>
 
 
+
 # useCallback() Hook
 - **useMemo()와 유사하지만 값이 아닌 함수를 반환**
 - Component가 렌더링 될때마다 매번 함수를 새로 정의하는 것이 아닌
@@ -170,7 +197,8 @@ const memoizedValue = useMemo (
 <br><br>
 
 
-# useMemo() Hook 사용법
+
+# useCallback() Hook 사용법
 ```javascript
 // 함수와 의존성배열을 파라미터로 받음
 const memoizedCallback = useCallback (
@@ -182,13 +210,48 @@ const memoizedCallback = useCallback (
     [의존성변수1, 의존성변수2]
 );
 ```
+<br>
+
+```javascript
+import {useState } from "react";
+
+function ParentComponent(props) {
+    const [count, setCount] = useState(0);
+    
+    // 재 렌더링 될때마다 매번 함수가 새로 정의됨
+    // const handClick = (event) => {
+    //     // 클릭 이벤트 처리
+    // };
+    
+    // 특정 변수의 값이 변할 때에만 함수를 새로 정의하게되므로
+    // 함수가 다시 정의되지 않는 경우에는 자식 Component도 재 렌더링이 일어나지않음
+    // 의존성배열에 빈 배열이 들어갔음 -> mount, unmount될때에만 Callback()함수를 호출
+    const handClick = useCallback((event) => {
+        // 클릭 이벤트 처리
+    }, []);
+
+    return (
+        <div>
+            <button onClick={() => {
+                setCount(count + 1);
+            }}>
+                {count }
+            </button>
+
+            <ChildComponent handClick={handClick } />
+        </div>
+    );
+}
+```
 <br><br>
+
 
 
 # useRef() Hook
 - Reference를 사용하기 위한 Hook
 - Reference란 특정 Component에 접근할 수 있는 객체
 <br><br>
+
 
 
 # useRef() 사용법
