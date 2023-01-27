@@ -41,6 +41,7 @@ import NotificationList from './ex06/NotificationList';
 //   </React.StrictMode>
 // );
 
+// ex06
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
