@@ -9,7 +9,7 @@
 <br><br>
 
 
-# useState()
+# useState() Hook
 - state를 사용하기 위한 Hook
 
 ```javascript
@@ -61,7 +61,7 @@ function Counter(props) {
 <br><br>
 
 
-# useEffect()
+# useEffect() Hook
 - side effect를 수행하기 위한 Hook
 - side effect란 다른 Component에 영향을 미칠 수 있으며, 렌더링 중에는 작업이 완료될 수 없는 것들
 - 예를 들어, 서버에서 데이터를 받아오거나 수동으로 DOM을 변경하는 등의 작업
@@ -132,4 +132,99 @@ useEffect(() => {
         ...
     }
 }, [의존성 변수1, 의존성 변수2, ...]);
+```
+<br><br>
+
+
+# useMemo() Hook
+- Memoized value를 리턴하는 Hook
+- **연산량이 많은 함수의 호출결과를 저장해두었다가 같은 입력값으로 함수를 호출하면**
+- **새로 함수를 호출하지않고 이전에 저장해놨던 호출결과를 바로 반환시킴**
+<br><br>
+
+
+# useMemo() Hook 사용법
+- **useMemo()를 통해 전달되는 함수는 렌더링이 일어나는 동안 실행된다는 점**
+- 즉, 렌더링이 일어나는 동안 실행되서는 안될 함수를 useMemo()에 넣으면 안됨
+- 예를 들면, useEffect()에서 실행되어야 할 side effect
+- 서버에서 데이터를 받아오거나, 수동으로 DOM을 변경하는 작업 등은 렌더링이 일어나는 동안은 실행되어서는 안되기때문
+- 이럴경우에는 useEffect() 사용하는 것이 맞음
+```javascript
+// 함수와 의존성배열을 파라미터로 받음
+const memoizedValue = useMemo (
+    () => {
+        // 의존성배열의 변수 중 하나라도 변경되면
+        // 새로 create함수를 호출하여 결과값을 반환함
+        return computeExpensiveValue(의존성변수1, 의존성변수2);
+    },
+    [의존성변수1, 의존성변수2]
+);
+```
+<br><br>
+
+
+# useCallback() Hook
+- **useMemo()와 유사하지만 값이 아닌 함수를 반환**
+- Component가 렌더링 될때마다 매번 함수를 새로 정의하는 것이 아닌
+- 의존성배열의 값이 바뀐 경우에만 함수를 새로 정의해서 리턴해줌
+<br><br>
+
+
+# useMemo() Hook 사용법
+```javascript
+// 함수와 의존성배열을 파라미터로 받음
+const memoizedCallback = useCallback (
+    () => {
+      // 의존성배열의 변수 중 하나라도 변경되면
+      // memoization된 callback함수를 반환함
+      doSomething(의존성변수1, 의존성변수2);
+    },
+    [의존성변수1, 의존성변수2]
+);
+```
+<br><br>
+
+
+# useRef() Hook
+- Reference를 사용하기 위한 Hook
+- Reference란 특정 Component에 접근할 수 있는 객체
+<br><br>
+
+
+# useRef() 사용법
+- Reference에는 current라는 속성이 있는데 현재 참조하고 있는 Element를 의미
+- 이렇게 생성된 reference 객체는 Component의 마운트해제 전까지는 계속 유지됨
+- 즉, **useRef()는 변경 가능한 current라는 속성을 가진 하나의 상자로 생각하면 됨**
+- current 속성을 변경한다고해서 재 렌더링이 일어나지는 않는다
+- 따라서 Ref에 DOM Node가 연결되거나 분리되었을때 어떤 코드를 실행하고싶다면
+- useRef()가 아닌 useCallback()을 사용해야함
+
+```javascript
+// 파라미터로 초기값을 넣으면 해당 초기값으로 초기화된 Reference객체를 반환
+const refContatiner = userRef(초기값);
+```
+<br>
+
+```javascript
+// <h1>의 높이값을 매번 업데이트해주고있음
+// useRef()가 아닌 callback ref방식을 사용했음
+// useRef()방식은 reference 객체가 current속성이 변경되었는지를 따로 알려주지 않기때문
+// useCallback()의 의존성배열로 빈 배열을 넣음 -> mount, unmount될때에만 Callback()함수를 호출
+// 재 렌더링시에는 호출x
+function MeasureExample(props) {
+    const [height, setHeight] = useState(0);
+
+    const measuredRef = useCallback(node => {
+        if (node !== null) {
+            setHeight(node.getBoundingClientRect().height);
+        }
+    }, []);
+
+    return (
+        <>
+            <h1 ref={measuredRef }>안녕, 리액트</h1>
+            <h2>위 헤더의 높이는 {Math.round(height) }px 입니다</h2>
+        </>
+    );
+}
 ```
