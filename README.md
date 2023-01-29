@@ -36,7 +36,7 @@ DOM(Document Object Model)이란?? **웹페이지를 정의하는 하나의 객�
 - React는 모든 요소가 Component라는 하나의 개념으로 구성되어 있음
 - 따라서, 의존성과 호환성 문제가 적으므로 Component단위로 재사용이 용이함
 
-## 모바일 앱 개발지식
+## 모바일 앱(App) 개발지식
 - Javascript로 한번 코딩을 해서 Android와 IOS 앱을 만들 수 있음
 <br><br><br>
 
