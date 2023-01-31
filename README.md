@@ -129,7 +129,7 @@ console.log(a ? 1 : 2); // 출력결과: 1
 
 console.log(b ? 1 : 2); // 출력결과: 2
 ```
-<br>
+<br><br>
 
 
 ## JavaScript의 함수
