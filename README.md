@@ -1,5 +1,5 @@
 # 참고강의 : [인프런 - 소플의 처음만난 React 바로가기](https://www.inflearn.com/course/%EC%B2%98%EC%9D%8C-%EB%A7%8C%EB%82%9C-%EB%A6%AC%EC%95%A1%ED%8A%B8)
-<br><br>
+<br>
 
 **리액트(React)란??** \
 **사용자 인터페이스를 만들기위한 자바스크립트 라이브러리** (A Javascript library for building user interfaces) \
